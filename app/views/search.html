@@ -1,0 +1,60 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../app/css/style.css">
+    <title>API</title>
+</head>
+
+<body>
+    <main>
+        <h1>GitHub API</h1>
+        <hr />
+        <ul></ul>
+    </main>
+
+
+    <form id="myForm" autocomplete="off" ng-controller="gitrepoController">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" ng-model="search" name="search" id="search" placeholder="Busque algum repositório">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12 ">
+                <button class="btn btn-danger btn-block" ng-click="repo(search)">
+                    Buscar
+                </button>
+            </div>
+        </div>
+
+        <div ng-app="app">
+            <div>
+                <h1 ng-show="repositorios_total" style="font-size:20px;"> Existem {{ repositorios_total }} repositórios
+                    disponiveis </h1>
+            </div>
+
+            <ul style="list-style-type: none;margin:0px;padding:20px;">
+
+                <li ng-repeat="x in repositorios" >
+                    <div style="justify-content: flex-start; border-style:solid; border-width:2px; padding:20px;">
+                        <div>
+                            <a href="{{x.url}}" style="color:0969da;font-size: 16px;"> {{ x.full_name }} </a>
+                        </div>
+                        <div>
+                            {{ x.description}}
+                        </div>
+                        <div>
+                            {{ x.topics}}
+                        </div>
+                        <div>
+                            {{ x.watchers}}
+                        </div>
+                    </div>
+                    <hr />
+                </li>
+            </ul>
+    </form>
