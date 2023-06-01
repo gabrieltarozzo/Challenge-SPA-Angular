@@ -1,7 +1,5 @@
 # SpaAngular
 
-# SpaAngular
-
 Este é um projeto Single Page Application (SPA) desenvolvido com o framework Angular. Ele fornece uma estrutura básica para criar aplicativos web modernos e interativos.
 
 ## Tecnologias Utilizadas
